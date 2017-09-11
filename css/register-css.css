@@ -18,18 +18,29 @@ html,body
 	background-color: #c20c0c;
 	height:6vh;
 	text-align: center;
-	position: relative;
+	display: flex;
+	flex-direction: row;
 }
 
 .headerInfo{
 	color: #fff;
-	position: absolute;
 	bottom: 0;
-	width: 100%;
 	text-align: center;
 	font-size: 20px;
 	letter-spacing:0.1em;
 	padding-bottom: 1px;
+	padding-top: 8px;
+	width: 70%;
+}
+.returnImg{
+	padding-top: 8px;
+	height: 100%;
+	width: 15%;
+}
+
+.returnImg a img{
+	width: 60%;
+	height: 60%;
 }
 
 .table{
