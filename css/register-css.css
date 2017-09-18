@@ -62,6 +62,33 @@ html,body
 	height: 10vh;
 }
 
+.identifyingCode{
+	border: none;
+	padding: 2px 12px;
+	font-size: 20px;
+	line-height: 1.5;
+	border-bottom: 1px solid #dcdcdc;
+	outline: none;
+	width: 60%;
+	height: 10vh;
+
+}
+
+/*.eyes{
+display: flex;
+flex-direction: row;
+}
+
+.eyes img{
+    width: 15%;
+    height: 8vh;
+    outline: none;
+    border: none;
+    padding: 2px 12px;
+    border-bottom: 1px solid #dcdcdc;
+    margin-top: 2vh;;
+}*/
+
 .selected{
 	border: none;
 	margin-top: 5px;
@@ -90,7 +117,7 @@ html,body
 	border-radius:10px;
 	color: #fff;
 	background-color: #dd2910;
-	width: 30%;
+	width: 32%;
 	text-align: center;
 	height: 8vh;
 	line-height: 8vh;
@@ -105,7 +132,7 @@ html,body
 	text-decoration:none;
 }
 
-.button {
+.confirm {
 	border-radius:10px;
 	color: #fff;
 	background-color: #dd2910;
@@ -118,7 +145,7 @@ html,body
 
 }
 
-.button a{
+.confirm a{
 	font-size: 12px;
 	color: #fff;
 	text-decoration:none;

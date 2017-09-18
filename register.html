@@ -11,26 +11,31 @@
 	</head>
 	<body>
 		<header class="header">
-		<div class="returnImg"><a href="start.html"><img src="images/return.png"></a></div>
-		<div class="headerInfo" id = "haderTitle">填写信息</div>
+			<div class="returnImg"><a href="start.html"><img src="images/return.png"></a></div>
+			<div class="headerInfo" id = "haderTitle">填写信息</div>
 		</header>
 
-		<div class="table">
-			<input type="text"  class="enabled text-info" placeholder="姓名" />
-			<input type="text"  class="enabled text-info" placeholder="手机号码" />
-			
-			<select name="select" class="selected"> 
-				<option value="0">办公室1</option> 
-				<option value="1">办公室2</option> 
-			</select> 
-			
-			<div id="sure">
-			<input type="text"  class="sured" placeholder="验证码" />
-			<div class="sureButton" ><a href = "sure.html">获取验证码</a></div>
-			</div>
+		<div class="table" id = "Table">
+<!-- 			<input type="text"  class="enabled text-info" placeholder="姓名" />
+-->			
+<input v-model="name" class="enabled text-info"  placeholder="姓名" >
+<input v-model="phone"  class="enabled text-info" placeholder="手机号码" />
 
-			<input type="text"  class="enabled text-info" placeholder="密码" />
-			<input type="text"  class="enabled text-info" placeholder="确认密码" />
-			<div class="button" ><a href = "sure.html">确认</a></div>
-		</div>
-	</body>
+<select  v-model="selected" class="selected"> 
+	<option disabled value="">所属办公室</option>
+	<option >办公室1</option> 
+	<option >办公室2</option> 
+</select> 
+
+<div id="sure">
+	<input v-model="phone"  class="sured" placeholder="验证码" />
+	<div class="sureButton" ><a href = "sure.html">获取验证码</a></div>
+</div>
+
+
+<input v-model="secret"  class="enabled text-info" placeholder="密码" type="password" />
+<input v-model="secretCode" class="enabled text-info" placeholder="确认密码" type="password"/>
+
+<div class="confirm" v-on:click="confirm"><a href = "confirm.html">确认</a></div>
+</div>
+</body>
