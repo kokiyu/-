@@ -7,24 +7,25 @@ var app = new Vue({
 		learnImg:"images/book.png",
 		BBSImg:"images/note.png",
 		MeImg:"images/my.png",
+		bodyCenter:"",
+		seen: true,
 	},
 	methods:{
 		returnGrey:function(){
 			console.log(this.beSelected);
 			if (this.beSelected == 'life') {
-				console.log('确实有进入life');
 				this.LifeImg ='images/home.png';
+
 			}
 			else if(this.beSelected == 'learn'){
-				console.log('确实有进入learn');
 				this.learnImg='images/book.png';
+
 			}
 			else if (this.beSelected == 'BBS') {
-				console.log('确实有进入BBS');
 				this.BBSImg ='images/note.png';
+
 			}
 			else if (this.beSelected == 'my1'){
-				console.log('确实有进入my');
 				this.MeImg = 'images/my.png';
 			}
 			else{
@@ -32,32 +33,51 @@ var app = new Vue({
 			}
 		},
 
-
 		lifeCircle:function(){
 			this.HTitle = '生活圈';
 			this.LifeImg ='images/Home_selected.png';
+						this.seen = true;
+
 			this.returnGrey();
 			this.beSelected ='life';
+
 
 		},
 		learnCircle:function(event){
 			this.HTitle = '学习圈';
 			this.learnImg = 'images/book_selected.png';
+						this.seen = false;
+
 			this.returnGrey();
 			this.beSelected = 'learn';
+			this.bodyCenter = 'Learn.html';
+
 		},
 		BBSCircle:function(event){
-			this.HTitle = 'BBS';
+			this.HTitle = '党建论坛';
 			this.BBSImg = 'images/Note_selected.png';
+			this.seen = true;
 			this.returnGrey();
 			this.beSelected = 'BBS';
+
+
 		},
 		MyCircle:function(event){
-			this.HTitle = '我的';
+			this.HTitle = '我的档案';
 			this.MeImg = 'images/my_selected.png';
+			this.seen = false;
 			this.returnGrey();
 			this.beSelected = 'my1';
+			this.bodyCenter = 'setting.html';
+
 		}
 
+	},
+	mounted: function () {
+		this.$nextTick(function () {
+    // Code that will run only after the
+    // entire view has been rendered
+})
 	}
+
 })

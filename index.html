@@ -16,10 +16,16 @@
 <div id="all">
 <header class="header">
   <div class="headerInfo" id = "haderTitle"> {{ HTitle }}</div>
+  <div v-if="seen" class="add" style="float: right;height: 100%;"><img src="images/add.png" style="height: 60%;padding: 2vw"></div>
 </header>
 
   <div id = "bodyCenter">
-    <iframe src="login.html" class="bodyC"></iframe>
+<!--     <div v-if="show" class="spinner" id="spinners">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div> -->
+    <iframe :src="bodyCenter" class="bodyC"></iframe>
   </div>
 
   <footer class="footer">
@@ -35,7 +41,7 @@
 
    <div v-on:click="BBSCircle"  class="option">
      <img :src ="BBSImg" class="option_icon" >
-     <div class="option_name">BBS</div>
+     <div class="option_name">讨论区</div>
    </div>
 
    <div v-on:click="MyCircle" class="option">
