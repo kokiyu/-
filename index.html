@@ -16,7 +16,7 @@
 <div id="all">
 <header class="header">
   <div class="headerInfo" id = "haderTitle"> {{ HTitle }}</div>
-  <div v-if="seen" class="add" style="float: right;height: 100%;"><img src="images/add.png" style="height: 60%;padding: 2vw"></div>
+  <div v-if="seen"  v-on:click="openSon" class="add" style="float: right;height: 100%;"><img src="images/add.png" style="height: 50%;padding: 3vw"></div>
 </header>
 
   <div id = "bodyCenter">
@@ -52,3 +52,4 @@
  </footer>
  </div>
 </body>
+</html>
