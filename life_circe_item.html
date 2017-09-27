@@ -5,28 +5,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   
   <meta  name="format-detection" content="telephone-no">
-  <link rel="stylesheet" href="css/life_circe_item.css" />
+  <link rel="stylesheet" href="css/index_style.css" />
   <!-- defer属性是代表了在全局加载完毕之后，再读取js -->
 
   <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
   <script type="text/javascript" src="js/life_circe_item.js" defer></script>
   <title>中山党建</title>  
 </head>
-<body>
+<body style="height: 200%" >
   <div id="item">
     <div v-for="tab in list">
-      <div class="box">
       <img :src="tab.icon">
-      <div class="AllContent">
       <h2>{{tab.name}}</h2>
-      <p class="content">{{tab.content}}</p>
-      <p class="time"> {{tab.date}}</p>
-<!--       <p>{{tab.time}}</p>
- -->    </div>
-    </div>
-    </div>
-    <div class="loding_but" v-on:click="reload">
-      <p>{{loding_text}}</p>
+      <p>{{tab.content}}</p>
+      <p>{{tab.date}}</p>
+      <p>{{tab.time}}</p>
     </div>
   </div>
 </body>
