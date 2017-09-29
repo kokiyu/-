@@ -68,15 +68,17 @@ var app = new Vue({
 			this.returnGrey();
 			this.beSelected = 'my1';
 			this.bodyCenter = 'setting.html';
-
-		}
+		},
+		openNew:function(event){
+			if (this.HTitle == '生活圈') {
+				window.location.href=("./lifeCircle.html");
+			}
+			else if (this.HTitle == '党建论坛') {
+				window.location.href=("./addMessage.html");
+			}else{
+				return;
+			}
+		},
 
 	},
-	mounted: function () {
-		this.$nextTick(function () {
-    // Code that will run only after the
-    // entire view has been rendered
-})
-	}
-
 })
