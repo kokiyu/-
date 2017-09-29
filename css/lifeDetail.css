@@ -1,0 +1,51 @@
+* {
+		margin: 0;
+		padding: 0;
+		border: none;
+		font-size: 1.5625vw;
+		font-family: "Microsoft Yahei";
+	}
+
+	html,body
+	{
+		height: 100%;
+		overflow: hidden;
+	}
+
+	/*头部*/
+	.header{
+		background-color: #c20c0c;
+		height:6vh;
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.headerInfo{
+		color: #fff;
+		bottom: 0;
+		text-align: center;
+		font-size: 20px;
+		letter-spacing:0.1em;
+		padding-bottom: 1px;
+		padding-top: 8px;
+		width: 70%;
+	}
+	.returnImg{
+		padding-top: 8px;
+		height: 100%;
+		width: 15%;
+	}
+
+	.returnImg a img{
+		width: 60%;
+		height: 60%;
+	}
+
+	.upload{
+		padding-top: 8px;
+		height: 100%;
+		width: 15%;
+		font-size: 16px;
+		color: white;
+	}
