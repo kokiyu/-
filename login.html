@@ -5,7 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
 	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
-			<link rel="stylesheet" href="css/login.css" defer/>
+			<link rel="stylesheet" href="css/login.css" />
+		<script type="text/javascript" src="js/login.js" defer></script>
 
 	<title>中山党建</title>
 </head>
@@ -15,13 +16,15 @@
 	</div>
 	<div class="title">
 		<p id="p1">中山市第一人民法院</p>
-		<p id="p2">博识瑞达 笃行至善</p>
+		<p id="p2">博识睿达 笃行至善</p>
 	</div>
 	<div class="login">
 	<input v-model="phone" class="enabled text-info"  placeholder="手机号码" >
 	<input v-model="phone" class="enabled text-info"  placeholder="密码" >
 	</div>
-	<div v-on:click="login" class="button">登录</div>
-	<div v-on:click="forgetSecret" class="forgetSecret"><a href="forgetSecret.html">忘记密码</a></div>
-	
+	<div id="all">
+	<div v-on:click="login" class="button">确认</div>
+	<div v-on:click="forgetSecret" class="forgetSecret"><u>忘记密码</u></div>
+</div>
 </body>
+</html>

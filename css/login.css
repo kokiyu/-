@@ -24,8 +24,8 @@ input::-webkit-input-placeholder {
 #img{
 	margin-top: 20%;
 	margin-left: 25%;
-	width: 53vw;
-	height: 53vw;
+	width: 50vw;
+	height: 50vw;
 }
 
 #img img{
@@ -39,6 +39,8 @@ input::-webkit-input-placeholder {
 	color: #fec835;
 	width: 100%;
 	text-align: center;
+	font-weight:bold;
+
 }
 
 #p1{
@@ -55,6 +57,7 @@ input::-webkit-input-placeholder {
 	flex-direction: column;
 	margin-left: 12%;
 	margin-top: 15px;
+	font-weight: bold;
 }
 .enabled{
 	border: none;
@@ -78,13 +81,11 @@ input::-webkit-input-placeholder {
 	margin-left: 12%;
 	height: 5vh;
 	line-height: 5vh;
+	font-size: 16px;
+	font-weight: bold;
 }
 
-.button a{
-	font-size: 15px;
-	color: #d6091e;
-	text-decoration:none;
-}
+
 .forgetSecret{
 	margin-top:1vh;
 	color: #d6091e;
