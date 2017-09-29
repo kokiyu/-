@@ -1,51 +1,132 @@
 * {
-		margin: 0;
-		padding: 0;
-		border: none;
-		font-size: 1.5625vw;
-		font-family: "Microsoft Yahei";
-	}
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-size: 1.5625vw;
+	font-family: "Microsoft Yahei";
+}
 
-	html,body
-	{
-		height: 100%;
-		overflow: hidden;
-	}
+html,body
+{
+	height: 100%;
+	overflow: hidden;
+}
 
-	/*头部*/
-	.header{
-		background-color: #c20c0c;
-		height:6vh;
-		text-align: center;
-		display: flex;
-		flex-direction: row;
-	}
+/*头部*/
+.header{
+	background-color: #c20c0c;
+	height:6vh;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+}
 
-	.headerInfo{
-		color: #fff;
-		bottom: 0;
-		text-align: center;
-		font-size: 20px;
-		letter-spacing:0.1em;
-		padding-bottom: 1px;
-		padding-top: 8px;
-		width: 70%;
-	}
-	.returnImg{
-		padding-top: 8px;
-		height: 100%;
-		width: 15%;
-	}
+.headerInfo{
+	color: #fff;
+	bottom: 0;
+	text-align: center;
+	font-size: 20px;
+	letter-spacing:0.1em;
+	padding-bottom: 1px;
+	padding-top: 8px;
+	width: 70%;
+}
+.returnImg{
+	padding-top: 8px;
+	height: 100%;
+	width: 15%;
+}
 
-	.returnImg a img{
-		width: 60%;
-		height: 60%;
-	}
+.returnImg a img{
+	width: 60%;
+	height: 60%;
+}
 
-	.upload{
-		padding-top: 8px;
-		height: 100%;
-		width: 15%;
-		font-size: 16px;
-		color: white;
-	}
+.upload{
+	padding-top: 8px;
+	height: 100%;
+	width: 15%;
+	font-size: 16px;
+	color: white;
+}
+
+/*会议部分*/
+.content{
+margin: 2%;
+}
+
+.content h1{
+font-size: 3em;
+font-weight: bold;
+}
+
+.content h2{
+color: #707070;
+font-size: 1em;
+}
+
+.summer{
+border:1px solid #dcdcdc;
+width: 100%;
+height: 20vh;
+}
+
+.time{
+margin: 2%;
+border-bottom: 1px solid #dcdcdc;
+}
+.time p{
+	height: 3vh;
+}
+
+.short{
+color: #707070;
+font-size: 2em;
+
+}
+.month{
+font-size: 2em;
+color: #000;
+}
+.minute{
+color: red;
+font-size: 2em;
+}
+
+.people{
+margin:2%;
+border-bottom:1px solid #dcdcdc;
+
+}
+.title2{
+font-size: 2.2em;
+color: grey;
+}
+.item{
+	padding: 1vw;
+}
+.name{
+display:inline-block;
+font-size: 2em;
+width: 40%;
+}
+.station{
+font-size: 2em;
+color: grey;
+	display:inline-block;
+width: 40%;
+}
+.mettingTime{
+font-size: 2em;
+color: red;
+}
+
+.notify{
+	margin: 2%;
+}
+
+.notifything{
+	border:1px solid #dcdcdc;
+	width: 100%;
+height: 10vh;
+}
