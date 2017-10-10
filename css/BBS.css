@@ -37,7 +37,9 @@ font-size: 1em;
 margin-top: 5px;
 width: 90%;
 margin-left: 5%;
-font-size: 2em;
+font-size: 1em;
+border-bottom: 1px solid #dcdcdc;
+
 }
 
 .content img{

@@ -64,8 +64,11 @@ var app = new Vue({
 						console.log("sssssssssssssssssss");
 
 		},
-		goOnDetail:function(){
-				window.top.location.href=("./lifeDetail.html");
+		goOnDetail:function(event){
+
+               
+
+				window.top.location.href=("./lifeDetail.html?meetId="+event);
 		}
 	}
 })

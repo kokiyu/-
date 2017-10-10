@@ -8,7 +8,7 @@ var app = new Vue({
 		learnImg:"images/book.png",
 		BBSImg:"images/note.png",
 		MeImg:"images/my.png",
-		seen: true,
+		seen: false,
 	},
 	methods:{
 		returnGrey:function(){
@@ -36,7 +36,7 @@ var app = new Vue({
 		lifeCircle:function(){
 			this.HTitle = '生活圈';
 			this.LifeImg ='images/Home_selected.png';
-			this.seen = true;
+			this.seen = false;
 			this.returnGrey();
 			this.beSelected ='life';
 			this.bodyCenter = 'life_circe_item.html';

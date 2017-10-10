@@ -7,38 +7,42 @@
 <meta  name="format-detection" content="telephone-no">
 <link rel="stylesheet" href="css/lifeDetail.css" />
 <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script type="text/javascript" src="js/lifeDetail.js" defer></script>
 
 <title>公告消息</title>
 </head>
 <body>
+	<div id = "all">
 	<header class="header">
 		<div class="returnImg"><a href="index.html"><img src="images/return.png"></a>
 		</div>
 		<div class="headerInfo" id = "haderTitle">公告消息</div>
-		<div class="rightBUT">上传</div>
-	</header>
-<img style ="width: 100%;" src="images/test.jpg">
+<!-- 		<div class="rightBUT">上传</div>
+ -->	</header>
+<img :src="alldata.image" style ="width: 100%;" >
 <div class="content">
-	<h1>8月21日周一会议</h1>
-	<h2>2017-08-18 10：36</h2>
-	<p class="summer">会议认为在观点上是有所保留的,就像事情对错不清,但个人认为是对的;会议指出在观点上是明确的,是对已发生的事物做出的评论;</p>		
+	<h1>{{title}}</h1>
+	<h2>{{alldata.create_time}}</h2>
+	<p class="summer">{{describe}}</p>		
 </div>
 <div class="time">
-	<p><span class="short">开始时间<span> <span class="month">08/23星期三</span> <span class="minute">09：30</span></p>
-	<p><span class="short">结束时间</span> <span class="month">08/23星期三 </span> <span class="minute">09：30</span></p>
-	<p><span class="short">举办地点</span>  <span class="month">XX大厦A座6-605会议室</span></p>
+	<p><span class="short">开始时间 <span> <span class="month">{{start_time}} </span> <span class="minute">{{start_time2}}</span></p>
+	<p><span class="short">结束时间 </span> <span class="month">{{end_time}} </span> <span class="minute">{{end_time2}}</span></p>
+	<p><span class="short">举办地点 </span>  <span class="month">{{location}}</span></p>
 </div>
 <div class="people">
 	<p class="title2">参会人员</p>
-	<div class="item">
-	<span class="name">办公室-主任-陈晨</span>
-	<span class="station">已签到</span>
-	<span class="mettingTime">09:25:15</span>
-</div>
+	<div class="item" v-for="tab in cardData">
+	<span class="name">{{tab.user_name}}</span>
+	<span class="station">{{tab.attend_status==1?"未打卡":"已打卡"}}</span>
+<!-- 	<span class="mettingTime">09:25:15</span>
+ --></div>
 </div>
 <div class="notify">
 	<p class="title2">参会备注</p>
-	<p class="notifything">必须提前5分钟到达，做好会前定向，与会人员提前5分钟进入会场。</p>
+	<p class="notifything">{{describe}}</p>
+</div>
 </div>
 </body>
 </html>

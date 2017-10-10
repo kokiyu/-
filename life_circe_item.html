@@ -17,7 +17,7 @@
 <body>
   <div id="item" >
     <div v-for="tab in alldata">
-      <div class="box" v-on:click="goOnDetail" >
+      <div class="box" v-on:click="goOnDetail(tab.id)" >
       <img :src="tab.image">
       <div class="AllContent">
       <h2>{{tab.title}}</h2>
