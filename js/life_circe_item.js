@@ -61,7 +61,9 @@ var app = new Vue({
 	addLifeCircle:function(){
 						console.log("sssssssssssssssssss");
 
-
+		},
+		goOnDetail:function(){
+				window.top.location.href=("./lifeDetail.html");
 		}
 	}
 })

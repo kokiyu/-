@@ -3,12 +3,19 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<meta  name="format-detection" content="telephone-no">
+		<meta http-equiv ='Access-Control-Allow-Origin' content='*'>
+
 		<link rel="stylesheet" href="css/register-css.css" defer/>
 		<!-- defer属性是代表了在全局加载完毕之后，再读取js -->
+        <script type="js/sms.js"></script>
 		<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
 		<script type="text/javascript" src="js/register.js" defer></script>
+		<script type="text/javascript" src="js/qs.js" defer></script>
+
 	</head>
 	<body>
 		<header class="header">
@@ -24,13 +31,12 @@
 
 <select  v-model="selected" class="selected"> 
 	<option disabled value="">所属办公室</option>
-	<option >办公室1</option> 
-	<option >办公室2</option> 
+	<option  v-for="(item, index) in alldata"> {{item.dept_name}}</option>
 </select> 
 
 <div id="sure">
 	<input v-model="identifyNum"  class="sured" placeholder="验证码" />
-	<div class="sureButton" ><a href = "sure.html">获取验证码</a></div>
+	<div class="sureButton" v-on:click="identify">获取验证码</div>
 </div>
 
 

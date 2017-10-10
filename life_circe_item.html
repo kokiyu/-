@@ -13,9 +13,9 @@
   <title>中山党建</title>  
 </head>
 <body>
-  <div id="item">
+  <div id="item" >
     <div v-for="tab in list">
-      <div class="box">
+      <div class="box" v-on:click="goOnDetail" >
       <img :src="tab.icon">
       <div class="AllContent">
       <h2>{{tab.name}}</h2>

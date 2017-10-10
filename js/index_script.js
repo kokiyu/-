@@ -71,7 +71,7 @@ var app = new Vue({
 		},
 		openNew:function(event){
 			if (this.HTitle == '生活圈') {
-				window.location.href=("./lifeCircle.html");
+				window.location.href=("./addMeeting.html");
 			}
 			else if (this.HTitle == '党建论坛') {
 				window.location.href=("./addMessage.html");
@@ -79,6 +79,5 @@ var app = new Vue({
 				return;
 			}
 		},
-
 	},
 })

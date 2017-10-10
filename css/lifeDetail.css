@@ -9,28 +9,28 @@
 html,body
 {
 	height: 100%;
-	overflow: hidden;
-}
+/*	overflow: hidden;
+*/}
 
 /*头部*/
 .header{
 	background-color: #c20c0c;
 	height:6vh;
-	text-align: center;
 	display: flex;
 	flex-direction: row;
 }
 
 .headerInfo{
 	color: #fff;
-	bottom: 0;
+	width: 60%;
 	text-align: center;
 	font-size: 20px;
 	letter-spacing:0.1em;
 	padding-bottom: 1px;
-	padding-top: 8px;
-	width: 70%;
+	padding:1vh 0;
+
 }
+
 .returnImg{
 	padding-top: 8px;
 	height: 100%;
@@ -42,12 +42,12 @@ html,body
 	height: 60%;
 }
 
-.upload{
-	padding-top: 8px;
-	height: 100%;
-	width: 15%;
+.rightBUT{
+	color: #fff;
+	bottom: 0;
 	font-size: 16px;
-	color: white;
+	padding:1.5vh 0;
+	margin-left: 8%;
 }
 
 /*会议部分*/
@@ -126,7 +126,7 @@ color: red;
 }
 
 .notifything{
-	border:1px solid #dcdcdc;
-	width: 100%;
+border:1px solid #dcdcdc;
+width: 100%;
 height: 10vh;
 }
