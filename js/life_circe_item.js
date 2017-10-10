@@ -1,7 +1,6 @@
 var app = new Vue({
 	el:'#item',
 	data:{
-		message: 'Hello Vue!',
 		gao:0,
 		loding_text:'点击加载更多',
 		id:'',

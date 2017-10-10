@@ -35,6 +35,13 @@ html,body
 	padding-bottom: 1px;
 
 }
+.returnImg{
+	width: 4vh;
+	height: 4vh;
+	float: left;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+}
 /*中间位置*/
 .bodyC{
 	width: 100%;

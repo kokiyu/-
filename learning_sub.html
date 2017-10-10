@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   
+	<meta  name="format-detection" content="telephone-no">
+
+	<link rel="stylesheet" href="css/learning.css" />
+	<link rel="stylesheet" href="css/index_style.css" />
+
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" ></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<title>中山党建</title>
+</head>
+
+<body >
+	<div id="rootView">
+		<header class="header">
+			<div class="headerInfo" id = "haderTitle">{{learn.title}}</div>
+			<img  class="returnImg" src="images/return.png"  v-on:click="onBackClick"> 
+		</header>
+
+		<body>
+			<iframe :src="learn.url" style="width: 100vw;height: 100vh;"></iframe>
+		</body>
+	</div>
+	<script type="text/javascript">
+		var app=new Vue({
+			el:'#rootView',
+			data:{
+				learn:{},
+			},
+			created:function(){
+				this.fetchData();
+			},
+			methods:{
+				fetchData:function(){
+					var arr = sessionStorage.getItem('selectLearnSub');
+					console.log(arr);
+					this.learn = JSON.parse(arr);
+				},
+				onBackClick:function(){
+					window.history.go(-1);
+				},
+			}
+		});
+	</script>
+	</html>
