@@ -19,9 +19,11 @@ var app = new Vue({
 		edit_now:-1,
 	},
 	created: function () {
-		this.fetchData();
 	},
+   mounted:function(){
+		this.fetchData();
 
+   },
 	methods:{
 		fetchData:function(){
 			var that =this;
@@ -30,10 +32,10 @@ var app = new Vue({
 			.then(function (response) {
 	        //部门返回的数据
 	        result = JSON.stringify(response);
-	        console.log("返回的数据:"+result);
-	        console.log("所需要的数据模型:"+ JSON.stringify(response.data.data.data));
+	        // console.log("返回的数据:"+result);
+	        // console.log("所需要的数据模型:"+ JSON.stringify(response.data.data.data));
 	        that.alldata = response.data.data.data;
-	         console.log("查看赋值情况:"+ that.alldata[0].id);
+	         // console.log("查看赋值情况:"+ that.alldata[0].id);
 
 	    })
 			.catch(function (error) {
@@ -53,9 +55,7 @@ var app = new Vue({
 		});
        instance.get('http://120.24.211.212:7777/v1/users/requestcode')
 		.then(function (response) {
-			 console.log(JSON.stringify(response));
-			that.alldata = response.data.data.data;
-
+			  console.log(JSON.stringify(response));
 		})
 		.catch(function (error) {
 			console.log(error);
@@ -72,6 +72,7 @@ confirm:function(){
 	}
 	var result = '';
 	var that = this;
+	console.log("vcode:"+this.identifyNum);
 	axios.post(that.apiUrl, {
 		username: that.name,
 		phone:that.phone,
@@ -83,7 +84,7 @@ confirm:function(){
 	.then(function (response) {
 	//注册返回的数据
 	result = JSON.stringify(response);
-	// console.log(result);
+	 console.log("result："+result);
 	//注册失败返回的数据
 	let result2 = response.data.data.msg;
 	//注册情况

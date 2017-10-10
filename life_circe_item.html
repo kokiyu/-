@@ -10,19 +10,20 @@
 
   <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
   <script type="text/javascript" src="js/life_circe_item.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" ></script>
+
   <title>中山党建</title>  
 </head>
 <body>
   <div id="item" >
-    <div v-for="tab in list">
+    <div v-for="tab in alldata">
       <div class="box" v-on:click="goOnDetail" >
-      <img :src="tab.icon">
+      <img :src="tab.image">
       <div class="AllContent">
-      <h2>{{tab.name}}</h2>
-      <p class="content">{{tab.content}}</p>
-      <p class="time"> {{tab.date}}</p>
-<!--       <p>{{tab.time}}</p>
- -->    </div>
+      <h2>{{tab.title}}</h2>
+      <p class="content">{{tab.describe}}</p>
+      <p class="time"> {{tab.create_time}}</p>
+    </div>
     </div>
     </div>
     <div class="loding_but" v-on:click="addLifeCircle">
