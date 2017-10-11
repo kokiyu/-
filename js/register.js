@@ -17,6 +17,10 @@ var app = new Vue({
 		alldata:[],
 		index_now:-1,
 		edit_now:-1,
+		countdown:60, 
+		vcode:'获取验证码',
+		vcodeShow:true,
+
 	},
 	created: function () {
 	},
@@ -54,6 +58,11 @@ var app = new Vue({
 			});
 			instance.get('http://120.24.211.212:7777/v1/users/requestcode')
 			.then(function (response) {
+				if (response.data.code != 200) {
+					alert(response.data.message);
+					return;
+				}
+				that.waitIdentify();
 				console.log(JSON.stringify(response));
 			})
 			.catch(function (error) {
@@ -62,7 +71,27 @@ var app = new Vue({
 
 		},
 
+         waitIdentify:function(){
+       console.log("开始倒计时");
+        let me = this;
+        this.vcodeShow = false;
+        let interval = window.setInterval(function(){
+        	console.log("me.countdown"+me.countdown);
+        	if ((me.countdown-- ) <= 0 ) {
+        		
+        		me.countdown = 60;
+        		me.vcodeShow = true;
+        		me.vcode = "获取验证码";
+        		window.clearInterval(interval);
+        	}
+        	else{
+        		me.vcode = "还有"+me.countdown+"s获得验证码";
+        	}
+        },1000);
 
+         },
+      
+        
 
 		confirm:function(){
 			if (this.identifyNum == '') {
