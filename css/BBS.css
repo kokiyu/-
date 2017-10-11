@@ -46,3 +46,12 @@ border-bottom: 1px solid #dcdcdc;
 width: 100%;
 margin-bottom: 2%;
 }
+
+ .loding_but{
+ 	text-align: center;
+ 	margin-top: 2vw;
+ 	height: 5vw;
+ }
+ .loding_but p{
+ 	 	font-size: 2vw;
+ }

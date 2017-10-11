@@ -17,6 +17,9 @@
 		<div class="time">{{item.create_time}}  {{item.create_user_name}}发表 </div>
 		<div class="content">{{item.content}}<img :src="item.image_url"></div>
 	</div>
+	<div class="loding_but" v-on:click="addLifeCircle">
+      <p>{{loding_text}}</p>
+    </div>
 </div>
 </body>
 </html>

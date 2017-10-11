@@ -6,14 +6,16 @@ var app = new Vue({
 		id:'',
 		token:'',
 		alldata:'',
+		addData:'',
 		current_page:1,
+		all_page:0,
 	},
 	created:function(){
-    this.fetchData();
+		this.fetchData();
 	},
 	methods:{
 		fetchData:function(){
-         console.log("你好,这里是初始会议界面！");
+			console.log("你好,这里是初始会议界面！");
 		//截取token 和 id;
 		let id = "id" + "=";
 		let token = "token" + "=";
@@ -45,29 +47,62 @@ var app = new Vue({
 			}
 		});
 		// that.totalPage = [];
-		 instance.get('http://120.24.211.212:7777/v1/meeting')
-		 .then(function (response) {
-		 	
+		instance.get('http://120.24.211.212:7777/v1/meeting')
+		.then(function (response) {
+			
 			console.log(JSON.stringify(response));
 			that.alldata = response.data.data.data;
 
+		})
+		.catch(function(error){
+
+			console.log(error)
+		});
+
+
+	},
+	addLifeCircle:function(){
+		let that =this;
+
+      console.log("sssssssssssssssssss");
+       if (this.current_page<this.all_page) {
+                this.current_page++;
+                var instance = axios.create({
+			timeout: 1000,
+			async:true,
+			crossDomain:true,
+			headers: {
+				'id': this.id,
+				'token':this.token,
+			},
+			params:{
+				page:this.current_page,
+			}
+		});
+		// that.totalPage = [];
+		 instance.get('http://120.24.211.212:7777/v1/meeting')
+		 .then(function (response) {
+		 	
+			// console.log(JSON.stringify(response));
+			that.addData = response.data.data.data;
+			that.alldata = that.alldata.concat(response.data.data.data);
+            console.log("现在的alldata:"+JSON.stringify(that.alldata));
 		 })
 		 .catch(function(error){
 
 		 	console.log(error)
 		 });
+       }
+       else{
+       	that.loding_text = "这里已经是末尾了";
+       }
 
+	},
+	goOnDetail:function(event){
 
-		},
-	addLifeCircle:function(){
-						console.log("sssssssssssssssssss");
+		
 
-		},
-		goOnDetail:function(event){
-
-               
-
-				window.top.location.href=("./lifeDetail.html?meetId="+event);
-		}
+		window.top.location.href=("./lifeDetail.html?meetId="+event);
 	}
+}
 })
