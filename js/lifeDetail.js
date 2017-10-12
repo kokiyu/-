@@ -19,6 +19,7 @@ var app = new Vue({
         start_time2:'',
         end_time:'',
         end_time2:'',
+        checkinid:'check-in.html?meetId='
 
     },
     created:function(){
@@ -152,6 +153,7 @@ var app = new Vue({
                 that.start_time2 = that.alldata.start_time.substring(11);
                 that.end_time = that.alldata.end_time.substring(0,11);
                 that.end_time2 = that.alldata.end_time.substring(11);
+                that.checkinid = that.checkinid + that.alldata.id;
                 if (that.alldata.image !="") {
                     that.image = that.alldata.image;
                     console.log("获取信息成功:"+that.alldata.title);
@@ -248,5 +250,7 @@ var app = new Vue({
                 }
             });
         },
+        
+      
     }, 
 }) 

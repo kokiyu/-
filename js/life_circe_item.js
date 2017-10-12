@@ -9,6 +9,7 @@ var app = new Vue({
 		addData:'',
 		current_page:1,
 		all_page:0,
+		card:'',
 	},
 	created:function(){
 		this.fetchData();
