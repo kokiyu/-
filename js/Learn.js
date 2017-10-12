@@ -19,7 +19,6 @@ var app = new Vue({
  			})
  			.get(this.api_url)
  			.then(this.handleData)
-
  			.catch(function (error) {
  				console.log("错误:"+error);
  			})

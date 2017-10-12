@@ -71,28 +71,24 @@ var app = new Vue({
 
 		},
 
-         waitIdentify:function(){
-       console.log("开始倒计时");
-        let me = this;
-        this.vcodeShow = false;
-        let interval = window.setInterval(function(){
-        	console.log("me.countdown"+me.countdown);
-        	if ((me.countdown-- ) <= 0 ) {
-        		
-        		me.countdown = 60;
-        		me.vcodeShow = true;
-        		me.vcode = "获取验证码";
-        		window.clearInterval(interval);
-        	}
-        	else{
-        		me.vcode = "还有"+me.countdown+"s获得验证码";
-        	}
-        },1000);
-
-         },
-      
-        
-
+		waitIdentify:function(){
+			console.log("开始倒计时");
+			let me = this;
+			this.vcodeShow = false;
+			let interval = window.setInterval(function(){
+				console.log("me.countdown"+me.countdown);
+				if ((me.countdown-- ) <= 0 ) {
+					
+					me.countdown = 60;
+					me.vcodeShow = true;
+					me.vcode = "获取验证码";
+					window.clearInterval(interval);
+				}
+				else{
+					me.vcode = "还有"+me.countdown+"s获得验证码";
+				}
+			},1000);
+		},
 		confirm:function(){
 			if (this.identifyNum == '') {
 				window.alert("请先填写手机验证码。");

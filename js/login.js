@@ -26,12 +26,12 @@ var app = new Vue({
 				console.log("登录情况："+msg1);
                 //登录情况返回成功字符
                 if (msg1.indexOf("成功") > -1 ) {
-                	 that.token =  response.data.data.data.token;
-        	         that.id = response.data.data.data.id;
-                     document.cookie="id="+that.id;
-                    document.cookie="token="+that.token; 
-                    document.cookie="name="+that.account;
-                	 window.location.href=("./index.html");
+                	that.token =  response.data.data.data.token;
+                	that.id = response.data.data.data.id;
+                	document.cookie="id="+that.id;
+                	document.cookie="token="+that.token; 
+                	document.cookie="name="+that.account;
+                	window.location.href=("./index.html");
                 }
                 else{
                 	let finResult = result2.join("，");
