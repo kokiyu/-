@@ -30,6 +30,7 @@ var app = new Vue({
         	         that.id = response.data.data.data.id;
                      document.cookie="id="+that.id;
                     document.cookie="token="+that.token; 
+                    document.cookie="name="+that.account;
                 	 window.location.href=("./index.html");
                 }
                 else{
