@@ -3,7 +3,8 @@ var app = new Vue({
 	data:{
 		account	:'',
 		password:'',
-		api:"http://120.24.211.212:7777/v1/users/signin"
+		api:"http://120.24.211.212:7777/v1/users/signin",
+		user_id:'',
 	},
 	methods:{
 		login:function(){
@@ -26,11 +27,27 @@ var app = new Vue({
 				console.log("登录情况："+msg1);
                 //登录情况返回成功字符
                 if (msg1.indexOf("成功") > -1 ) {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                	 that.token =  response.data.data.data.token;
+        	         that.id = response.data.data.data.id;
+        	         that.user_id =response.data.data.data.user_id;
+                     document.cookie="id="+that.id;
+                    document.cookie="token="+that.token; 
+                    document.cookie="name="+that.account;
+                    document.cookie ="numb="+that.user_id;
+=======
+>>>>>>> Stashed changes
                 	that.token =  response.data.data.data.token;
                 	that.id = response.data.data.data.id;
                 	document.cookie="id="+that.id;
                 	document.cookie="token="+that.token; 
                 	document.cookie="name="+that.account;
+<<<<<<< Updated upstream
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
                 	window.location.href=("./index.html");
                 }
                 else{
