@@ -19,7 +19,8 @@
 	</header>
 
 	<div id="bodyCenter">
-		<div class="camera"><img src="images/camera.png" ></div>
+		<input @change="uploadImag($event)" type="file" id="upload_file"  style="display: none"/>
+		<div class="camera" v-on:click="onIconClick"><img :src="user_icon" ></div>
 
 		<div class="name">
 			<p>昵称：</p>

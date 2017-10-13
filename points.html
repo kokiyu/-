@@ -15,11 +15,17 @@
 
 </head>
 <style type="text/css">
+.text_rad{
+	color: #F00;
+}
+.text_bul{
+	color: #F00;
+}
 .item_title{
-	color: #0000FF;
 	font-size: 18px;
 }
 .item_time{
+	margin-top: 10px;
 	font-size: 12px;
 	align-self:flex-end;
 }
@@ -30,6 +36,10 @@
 	cursor: pointer;  
 	border-bottom: 1px solid #dcdcdc;
 }
+.pbox{
+	display: flex;
+	justify-content:space-between;
+}
 </style>
 <div id="rootView">
 	<header class="header">
@@ -39,8 +49,12 @@
 	<body>
 		<div class="line">
 			<div class="box" v-for="item in points" >
-				<p class="item_title">{{(item.operate?'+':'-')+item.point}}积分</p>
-				<p class="item_title">{{item.reason}}</p>
+				<div class="pbox" >
+					<span class="item_title" >{{item.reason}}</span>
+					<span v-bind:class="['item_title',item.operate?'text_rad':'text_bul']">
+						{{(item.operate?'+':'-')+item.point}}积分
+					</span>
+				</div>
 				<p class="item_time">{{item.create_time}}</p>
 			</div> 
 		</div>

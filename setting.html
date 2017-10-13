@@ -46,6 +46,10 @@
 		margin-right: 10%;
 		margin-top: 2.5vh;
 	}
+	.shortInfo span{
+		font-size: 3vh;
+		color: #F00;
+	}
 	.quit{
 		width: 80%;
 		height: 5vh;
@@ -76,7 +80,10 @@
 				<img src="images/right.png"  style="height: 23%;float:right;margin-right: 5%;
 				margin-top:4vh;">
 			</div>
-			<div v-on:click="toNumberInfo" class="shortInfo">积分:{{points}}<img src="images/right.png"></div>
+			<div v-on:click="toNumberInfo" class="shortInfo">积分:
+				<span>{{points}}</span>
+				<img src="images/right.png">
+			</div>
 <!-- 	<div class="shortInfo">签到记录<img src="images/right.png"></div>
 	<div class="shortInfo">我的消息<img src="images/right.png"></div> -->
 </div>
@@ -91,8 +98,10 @@
 		data:{
 			name:'用户名',
 			api_url:"http://120.24.211.212:7777/v1/points",
+			info_api:"http://120.24.211.212:7777/v1/account",
 			points:0,
 			mData:[],
+			user_id:0,
 		},
 		created:function(){
 			this.fetchData();
@@ -101,8 +110,20 @@
 			fetchData:function(){
 				this.getCookie();
 				this.getNumber();
+				this.getAccount();
 			},
-
+			getAccount:function(){
+				this.axiosCreate({
+					id:this.id,
+					token:this.token,
+				})
+				.get(this.info_api+'/'+this.user_id)
+				.then(function(reason){
+						console.log(JSON.stringify( reason));
+					if (reason.data.code==200) {
+					}
+				});
+			},
 			quit:function(){
 				window.top.location.href=("./start.html");
 			},
@@ -130,10 +151,12 @@
 					var c = cookie[i].trim().split('=');
 					if (c[0]=='id'){
 						this.id = c[1];
-					}else if (c[0]=='token') {
+					}else if (c[0].indexOf('token')>=0) {
 						this.token = c[1];
-					}else if(c[0]=='name'){
+					}else if(c[0].indexOf('name')>=0){
 						this.name = c[1];
+					}else if (c[0].indexOf('numb')>=0) {
+						this.user_id=c[1];
 					}
 				}
 			},
@@ -149,7 +172,7 @@
 				sessionStorage.setItem(
 					'SettingPoints',
 					JSON.stringify(this.mData)
-				);
+					);
 				window.top.location.href=("./points.html");
 			}
 		}

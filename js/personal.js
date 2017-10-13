@@ -3,6 +3,7 @@ var app = new Vue({
 	data:{
 		alldata:[],
 		api_url:"http://120.24.211.212:7777/v1/account/",
+		upload_api:"http://120.24.211.212:7777/v1/utils/file",
 		name:'',
 		nickname:'',
 		sex:'',
@@ -11,6 +12,7 @@ var app = new Vue({
 		education:'',
 		hiredate:'',
 		user_id:'',
+		user_icon:'images/camera.png',
 	}, 
 	created:function(){
 		this.fetchData();
@@ -100,6 +102,40 @@ var app = new Vue({
 			})
 			.catch(function (error) {
 				console.log(error);
+			});
+		},
+		onIconClick:function(){
+			document.getElementById('upload_file').click();
+		},
+		uploadImag:function(el){
+			if (!el.target.files[0].size)
+				return;
+			var file= el.target.files[0];
+			//创建form对象
+			let param = new FormData();
+			//通过append向form对象添加数据
+			var that=this;
+			param.append('file',file,file.name);
+			this.axiosCreate({
+				'id': this.id,
+				'token':this.token,
+			})
+			.post(this.upload_api,param)
+			.then(function(response){
+				console.log(JSON.stringify(response));
+				alert(response.data.message);
+				if (response.data.code==200) {
+					that.user_icon=response.data.data.image_url;
+				}
+			});
+
+		},
+		axiosCreate:function(headers){
+			return axios.create({
+				timeout: 1000,
+				async:true,
+				crossDomain:true,
+				headers: headers
 			});
 		},
 	},
