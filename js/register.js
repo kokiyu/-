@@ -49,7 +49,6 @@ var app = new Vue({
 		identify:function(){
 			let that = this;
 			var instance = axios.create({
-				timeout: 1000,
 				async:true,
 				crossDomain:true,
 				params:{
@@ -58,11 +57,13 @@ var app = new Vue({
 			});
 			instance.get('http://120.24.211.212:7777/v1/users/requestcode')
 			.then(function (response) {
+				console.log(JSON.stringify(response));
+				that.waitIdentify();
+
 				if (response.data.code != 200) {
 					alert(response.data.message);
 					return;
 				}
-				that.waitIdentify();
 				console.log(JSON.stringify(response));
 			})
 			.catch(function (error) {
