@@ -27,7 +27,6 @@ input::-webkit-input-placeholder {
 	width: 100%;
 	height: 30vw;
 	flex-flow:wrap;
-	background-color: #fff;
 }
 
 .box
@@ -36,6 +35,8 @@ input::-webkit-input-placeholder {
 	text-align: center;
 	border-bottom: 1px solid #dcdcdc;
 	border-right: 1px solid #dcdcdc;
+background-color: #fff;
+
 }
 
 .box img{

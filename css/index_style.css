@@ -16,6 +16,7 @@ html,body
 .bodyCenter{
   -webkit-overflow-scrolling: touch; 
   overflow-y: scroll; 
+    position: fixed;   
 }
 /*头部*/
 .header{

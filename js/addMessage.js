@@ -50,6 +50,7 @@ methods:{
         }
         else{
             alert("通知添加成功！");
+            location.href ="index.html";
         }
     })
     .catch(function (error) {

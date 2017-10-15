@@ -89,7 +89,7 @@ var app = new Vue({
 			.then(function (response) {
 				//部门返回的数据
 				result = JSON.stringify(response);
-				// console.log("返回的数据:"+result);
+				 console.log("部门返回的数据:"+result);
 
 				 console.log("所需要的数据模型:"+ JSON.stringify(response.data.data.data));
 
