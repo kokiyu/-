@@ -121,6 +121,7 @@
 
 			},
 			getAccount:function(){
+				let that = this;
 				this.axiosCreate({
 					id:this.id,
 					token:this.token,
@@ -133,11 +134,12 @@
                         
 					}
 					else{
-						this.alldata = reason.data.data.data;
-						if (this.alldata.image_url !="") {}
-							console.log("获得的image_irl："+this.alldata.image_url);
-						this.image_url = this.alldata.image_url;
-						console.log("this.image_url:"+this.image_url);
+						that.alldata = reason.data.data.data;
+						if (that.alldata.image_url !="") {
+							console.log("获得的image_irl："+that.alldata.image_url);
+						that.image_url = that.alldata.image_url;
+						console.log("this.image_url:"+that.image_url);
+						}
 					}
 				});
 			},
