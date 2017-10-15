@@ -9,14 +9,19 @@
 
 html,body
 {
-	height: 100%;
-	overflow: hidden;
+/*	height: 100%;
+	overflow: hidden;*/
 }
 
 .bodyCenter{
-  -webkit-overflow-scrolling: touch; 
-  overflow-y: scroll; 
-    position: fixed;   
+ position: fixed;    
+  right: 0;    
+  bottom: 0;    
+  left: 0;   
+  top: 0;   
+  -webkit-overflow-scrolling: touch;   
+  overflow-y: scroll;
+
 }
 /*头部*/
 .header{
