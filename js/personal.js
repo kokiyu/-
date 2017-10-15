@@ -13,6 +13,11 @@ var app = new Vue({
 		hiredate:'',
 		user_id:'',
 		user_icon:'images/camera.png',
+		image_url:'',
+		ddata:[],
+		selected:'',
+		now_dept:'',
+		now_dept_name:'',
 	}, 
 	created:function(){
 		this.fetchData();
@@ -38,6 +43,7 @@ var app = new Vue({
 			}
 			console.log("获得的id"+that.id +"获得的token:"+that.token);
 			console.log("user_id:"+this.user_id);
+
 			
 			var instance = axios.create({
 				timeout: 1000,
@@ -66,11 +72,44 @@ var app = new Vue({
 				that.birthday = that.alldata.birthday;
 				that.education = that.alldata.education;
 				that.hiredate = that.alldata.hiredate;
+			    that.now_dept = that.alldata.dept_id;
+				if (that.alldata.image_url != "") {
+				that.user_icon = that.alldata.image_url;
+			}
+							that.haveDept();
+
 			})
 			.catch(function (error) {
 				console.log(error);
 			});
 		},
+       haveDept:function(){
+       	let that= this;
+            axios.get('http://120.24.211.212:7777/v1/dept')
+			.then(function (response) {
+				//部门返回的数据
+				result = JSON.stringify(response);
+				// console.log("返回的数据:"+result);
+
+				 console.log("所需要的数据模型:"+ JSON.stringify(response.data.data.data));
+
+				that.ddata = response.data.data.data;
+				
+				for (var i = 0; i < response.data.data.data.length; i++) {
+					console.log("dept_id:"+that.now_dept);
+		            if (response.data.data.data[i].id == that.now_dept) {
+                        that.now_dept_name = response.data.data.data[i].dept_name; 
+                         console.log(that.now_dept_name) ;
+					}
+				}
+				// console.log("查看赋值情况:"+ that.alldata[0].id);
+
+			})
+			.catch(function (error) {
+				console.log("错误:"+error);
+			});
+
+       },
 		saveData:function(){
 			console.log("保存");
 			var instance = axios.create({
@@ -84,14 +123,15 @@ var app = new Vue({
 			});
 
 			let url = this.api_url+this.user_id;
-
 			instance.put(url,{
-				dept_id:1,
 				nickname:this.nickname,
 				sex:this.sex,
 				birthday:this.birthday,
 				education:this.education,
-				hiredate:this.hiredate
+				hiredate:this.hiredate,
+				image_url:this.image_url,
+				dept_id:this.selected,
+
 			})
 			.then(function (response) {
 				if (response.data.code!=200) {
@@ -126,6 +166,7 @@ var app = new Vue({
 				alert(response.data.message);
 				if (response.data.code==200) {
 					that.user_icon=response.data.data.image_url;
+					that.image_url = that.user_icon;
 				}
 			});
 

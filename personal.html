@@ -30,16 +30,16 @@
 
 	<div class="name">
 		<p>部门选择：</p>
-		<select class="selected"> 
-			<option disabled value="">所属办公室</option>
-			<option >办公室1</option> 
-			<option >办公室2</option> 
+		<select class="selected" v-model="selected"> 
+			<option disabled value="">目前办公室:{{now_dept_name}}</option>
+			<option   v-for="(item, index) in ddata" v-bind:value="item.id">{{item.dept_name}}</option> 
+		
 		</select> 
 	</div>
 
 	<div class="name">
 		<p>电话：</p>
-		<input v-model="phone" class="enabled text-info"   >
+		<input v-model="phone" class="enabled text-info"  >
 	</div>
 
 <div class="name">

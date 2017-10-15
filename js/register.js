@@ -105,6 +105,7 @@ var app = new Vue({
 			param.append("confirm_password",this.secretCode);
 			param.append("agree",true);
 			param.append("vcode",this.identifyNum);
+            param.append("",this.selected);
 
 			axios.post(that.apiUrl, param)
 			.then(function (response) {
@@ -132,13 +133,5 @@ var app = new Vue({
 			});
 		},
 	},
-	register:function(){
-		if (this.identifyNum == '') {
-			alert("请先填写手机验证码。");
-			return;
-		}
-		console.log("vcode:"+this.identifyNum);
-
-	},
-
+	
 })

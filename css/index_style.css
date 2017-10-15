@@ -13,7 +13,10 @@ html,body
 	overflow: hidden;
 }
 
-
+.bodyCenter{
+  -webkit-overflow-scrolling: touch; 
+  overflow-y: scroll; 
+}
 /*头部*/
 .header{
 	background-color: #c20c0c;

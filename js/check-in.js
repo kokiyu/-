@@ -19,7 +19,7 @@ var app = new Vue({
 	methods:{
 
 		onBackClick:function(){
-			location.href="lifeDetail.html";
+			location.href="index.html";
 		},
 
 

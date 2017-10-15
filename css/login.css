@@ -18,14 +18,14 @@ input::-webkit-input-placeholder {
 	/* placeholder颜色  */
 	color: #fff;
 	/* placeholder字体大小  */
-	font-size: 16px;
+	font-size: 1.5625vw;
 
 }
 #img{
 	margin-top: 20%;
-	margin-left: 25%;
-	width: 50vw;
-	height: 50vw;
+	margin-left: 30%;
+	width: 40vw;
+	height: 40vw;
 }
 
 #img img{
@@ -56,18 +56,18 @@ input::-webkit-input-placeholder {
 	display: flex;
 	flex-direction: column;
 	margin-left: 12%;
-	margin-top: 15px;
+	margin-top: 4vh;
 	font-weight: bold;
 }
 .enabled{
 	border: none;
 	padding: 2px 12px;
-	font-size: 20px;
-	line-height: 1.5;
+	font-size: 2vh;
+	line-height: 2vh;
 	border-bottom: 1px solid #dcdcdc;
 	outline: none;
 	width: 85%;
-	height: 10vh;
+	height: 7vh;
 	background-color: rgba(0,0,0,0.0);
 	color: #fff;
 }
@@ -79,9 +79,9 @@ input::-webkit-input-placeholder {
 	text-align: center;
 	margin-top:2vh;
 	margin-left: 12%;
-	height: 5vh;
-	line-height: 5vh;
-	font-size: 16px;
+	height: 6vh;
+	line-height: 6vh;
+	font-size: 2vh;
 	font-weight: bold;
 }
 
@@ -89,13 +89,13 @@ input::-webkit-input-placeholder {
 .forgetSecret{
 	margin-top:1vh;
 	color: #d6091e;
-	font-size:16px;
+	font-size:1.5vh;
 	text-align: center;
 	font-weight: bold;
 }
 
 .forgetSecret u{
-	font-size: 14px;
+	font-size: 1.5vh;
 		font-weight: bold;
 
 }

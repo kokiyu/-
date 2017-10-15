@@ -63,7 +63,7 @@
 		border:1px solid red;
 		font-weight: bold;
 		letter-spacing: 1px;
-		font-size: 2.2em;
+		font-size: 2vh;
 	}
 }
 </style>
@@ -72,9 +72,9 @@
 	<div id="all"> 
 		<div class="info">
 			<div class="personal" v-on:click="personal1">
-				<img src="images/camera.png" style="height: 60%;margin-left: 5%;float: left;padding:2vh 0;">
+				<img :src="image_url" style="height: 60%;margin-left: 5%;float: left;padding:2vh 0;">
 				<div id="text" style="width: 80%; padding:10px 0;margin-left: 5%;">
-					<p style="font-size: 3em">{{name}}</p>
+					<p style="font-size: 2vh">{{name}}</p>
 					<p style="color:#707070;">查看或编辑个人资料</p>
 				</div>
 				<img src="images/right.png"  style="height: 23%;float:right;margin-right: 5%;
@@ -99,18 +99,26 @@
 			name:'用户名',
 			api_url:"http://120.24.211.212:7777/v1/points",
 			info_api:"http://120.24.211.212:7777/v1/account",
+			alldata:[],
 			points:0,
 			mData:[],
 			user_id:0,
+			image_url:'images/camera.png',
 		},
+		  // computed: {
+    //         images: function () {
+    //             return this.firstName + ' ' + this.lastName
+    //         },
 		created:function(){
 			this.fetchData();
 		},
+
 		methods:{
 			fetchData:function(){
 				this.getCookie();
 				this.getNumber();
 				this.getAccount();
+
 			},
 			getAccount:function(){
 				this.axiosCreate({
@@ -120,7 +128,16 @@
 				.get(this.info_api+'/'+this.user_id)
 				.then(function(reason){
 						console.log(JSON.stringify( reason));
-					if (reason.data.code==200) {
+					if (reason.data.code!=200) {
+						alert(reason.data.message);
+                        
+					}
+					else{
+						this.alldata = reason.data.data.data;
+						if (this.alldata.image_url !="") {}
+							console.log("获得的image_irl："+this.alldata.image_url);
+						this.image_url = this.alldata.image_url;
+						console.log("this.image_url:"+this.image_url);
 					}
 				});
 			},

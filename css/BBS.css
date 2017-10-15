@@ -22,7 +22,7 @@ margin-top: 2%;
 
 .name{
 margin-left: 5%;
-font-size: 2em;
+font-size: 3em;
 }
 
 .time{
@@ -30,14 +30,14 @@ margin-top: 3px;
 
 color: #dcdcdc;
 margin-left: 5%;
-font-size: 1em;
+font-size: 1.5em;
 }
 
 .content{
 margin-top: 5px;
 width: 90%;
 margin-left: 5%;
-font-size: 1em;
+font-size: 2em;
 border-bottom: 1px solid #dcdcdc;
 
 }

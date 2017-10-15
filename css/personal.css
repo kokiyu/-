@@ -17,7 +17,7 @@ input::-webkit-input-placeholder {
 	/* placeholder颜色  */
 	color: #8d8e8d;
 	/* placeholder字体大小  */
-	font-size: 16px;
+	font-size: 2em;
 
 }
 /*头部*/
@@ -60,7 +60,7 @@ input::-webkit-input-placeholder {
 /*中间部分*/
 
 .enabled{
-	font-size: 16px;
+	font-size: 2em;
 }
 .camera{
 	width: 100%;
@@ -72,7 +72,7 @@ input::-webkit-input-placeholder {
 .camera img{
 	height: 60%;
 	margin-top: 2vh;
-	background-color: #f5f4f4;
+	background-color: #fff;
 	padding: 15px;
 }
 
@@ -87,7 +87,7 @@ input::-webkit-input-placeholder {
 .name p{
 	margin-left: 5%;
 	padding: 2vh;
-	font-size: 16px;
+	font-size: 2em;
 	color: #8d8e8d;
 	width: 30%;
 	bottom: 0;
@@ -95,7 +95,7 @@ input::-webkit-input-placeholder {
 
 .selected{
 	border: none;
-	font-size: 20px;
+	font-size: 2em;
 	width: 50%;
 	background-color: #fff;
 

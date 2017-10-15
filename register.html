@@ -30,7 +30,7 @@
 
 <select  v-model="selected" class="selected"> 
 	<option disabled value="">所属办公室</option>
-	<option  v-for="(item, index) in alldata"> {{item.dept_name}}</option>
+	<option  v-for="(item, index) in alldata" v-bind:value="item.id"> {{item.dept_name}}</option>
 </select> 
 
 <div id="sure">
