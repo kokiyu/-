@@ -93,6 +93,11 @@ var app = new Vue({
 			var timePart2 = parseInt(now - endtime) / 1000 / 60;
 
            // console.log(parseInt(beginTimez - now) / 1000 / 60);
+          if (timePart > 15) {
+               
+               this.checkText = "距开会时间还有"+timePart+"分钟，开会前15分钟内才能打卡";
+          }
+
             if (timePart2 >=15) {
             	this.checkText = "会议已结束15分钟以上，无法打卡!"
             	return;
