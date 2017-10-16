@@ -22,7 +22,7 @@
 	color: #F00;
 }
 .item_title{
-	font-size: 18px;
+	font-size: 17px;
 }
 .item_time{
 	margin-top: 10px;
@@ -52,7 +52,7 @@
 				<div class="pbox" >
 					<span class="item_title" >{{item.reason}}</span>
 					<span v-bind:class="['item_title',item.operate?'text_rad':'text_bul']">
-						{{(item.operate?'+':'-')+item.point}}积分
+						{{(item.operate?'+':'-')+item.point}}
 					</span>
 				</div>
 				<p class="item_time">{{item.create_time}}</p>

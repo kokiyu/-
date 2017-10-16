@@ -151,6 +151,7 @@ font-size: 2em;
   width:80px;
   border-radius:40px;
   background:#EF0707;
+  margin: 0 auto;
   
 }
 #caseBlanche #load  p{ line-height:80px;}
@@ -193,9 +194,9 @@ font-size: 2em;
 /****第一个****/
 
 .warper { 
-    right: 15px;
-    bottom: 15px;
-	height: 40vw;
-	width: 40vw;
+    right: 1vw;
+    bottom: 10vw;
+	  height: 35vw;
+	   width: 35vw;
      position: fixed; 
    }
