@@ -14,13 +14,20 @@ body {
 	background-size:100% 100%; 
 	background-attachment:fixed;
 } 
+@font-face {
+    font-family: hoverTreeFont;
+    src: url('css/方正启体简体.ttf'); /* IE9+ */
+    }
 input::-webkit-input-placeholder {
 	/* placeholder颜色  */
-	color: #fff;
+	color: #f41c21;
 	/* placeholder字体大小  */
-	font-size: 1.5625vw;
+	font-size: 1.5625vw;s
 
 }
+
+
+
 #img{
 	margin-top: 20%;
 	margin-left: 30%;
@@ -36,10 +43,9 @@ input::-webkit-input-placeholder {
 .title
 {
 	margin-top: 3%;
-	color: #fec835;
+	color: #f41c21;
 	width: 100%;
 	text-align: center;
-	font-weight:bold;
 
 }
 
@@ -51,6 +57,7 @@ input::-webkit-input-placeholder {
 #p2{
 	margin-top: 1%;
 	font-size: 3em;
+    font-family: hoverTreeFont;
 }
 .login{
 	display: flex;
@@ -62,14 +69,14 @@ input::-webkit-input-placeholder {
 .enabled{
 	border: none;
 	padding: 2px 12px;
-	font-size: 2vh;
+	font-size: 2.7vh;
 	line-height: 2vh;
-	border-bottom: 1px solid #dcdcdc;
+	border-bottom: 1px solid #f41c21;
 	outline: none;
 	width: 85%;
 	height: 7vh;
 	background-color: rgba(0,0,0,0.0);
-	color: #fff;
+	color: #f41c21;
 }
 .button {
 	border-radius:10px;

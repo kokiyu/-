@@ -72,7 +72,6 @@ methods:{
        if (this.current_page<this.all_page) {
                 this.current_page++;
                 var instance = axios.create({
-			timeout: 1000,
 			async:true,
 			crossDomain:true,
 			headers: {
@@ -103,7 +102,10 @@ methods:{
 
 	},
 
+   BBSdetail:function(event){
+		window.top.location.href=("./BBS-detail.html?BBSid="+event);
 
+   },
 
 },
 })
