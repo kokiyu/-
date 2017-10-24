@@ -5,7 +5,7 @@ var app = new Vue({
 		loding_text:'点击加载更多',
 		id:'',
 		token:'',
-		alldata:'',
+		alldata:[],
 		addData:'',
 		current_page:1,
 		all_page:0,
@@ -51,8 +51,13 @@ var app = new Vue({
 		instance.get('http://120.24.211.212:7777/v1/meeting')
 		.then(function (response) {
 			
-			console.log(JSON.stringify(response));
 			that.alldata = response.data.data.data;
+			// 排序
+    that.alldata.sort(function(p1, p2) {
+	return new Date(p2.start_time).getTime() - new Date(p1.start_time).getTime();
+     });
+
+			console.log(JSON.stringify( that.alldata));
 
 		})
 		.catch(function(error){

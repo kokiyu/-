@@ -59,7 +59,6 @@ methods:{
 		.then(function (response) {
 			console.log(JSON.stringify(response));
 			that.alldata = response.data.data.data;
-			
 
 		})
 		.catch(function (error) {
@@ -68,7 +67,10 @@ methods:{
 
 	},
 	
-
+print:function(event){
+	console.log(this.alldata.id);
+	console.log(event);
+}
 
 
 

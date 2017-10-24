@@ -105,12 +105,24 @@ font-size: 1.5em;
 	<div class="time">{{alldata.create_time}} &nbsp {{alldata.create_user_name}} &nbsp 发表 </div>
 	<img :src="alldata.image_url">
 	<div class="content-text">{{alldata.content}}</div>
-    <div id="SOHUCS" sid="alldata.id" ></div> 
+    <div id="SOHUCS" sid=""></div> 
 
 </div>
 
 <!--PC和WAP自适应版-->
 <script type="text/javascript"> 
+	 window.onload = function(){
+        var url = location.search; //获取url
+        if (url.indexOf("?") != -1) { //如果url里有?号
+            var str = url.substr(1); //获取?后面的字符串
+            if(str.length > 0){ //获取到
+                var pa = document.getElementById("SOHUCS"); //获取所有param
+                 pa.sid = str; //把值赋值给value
+                console.log("获取到的sid"+pa.sid );
+            }
+        }
+    };
+
 (function(){ 
 var appid = 'cytgCCCvJ'; 
 var conf = 'prod_c421ac804a7c3dedabc54c9fc18c4d00'; 
