@@ -72,7 +72,7 @@ font-size: 16px;
 
        <div id="content">
        	<div class="check-in-text">{{checkText}}</div>
-       	<input type="text" name="check-in" v-model="checkString" class="check-in-put" placeholder="请输入验证码" />
+       	<input type="text" name="check-in" v-model="checkString" class="check-in-put" placeholder="请输入验证码" :disabled="disabled"/>
        	<div class="button" v-on:click= "sure">确认</div>
 
        </div>

@@ -10,6 +10,7 @@ var app = new Vue({
 		meetId:'',
 		api_url:'http://120.24.211.212:7777/v1/meeting',
 		rand_num:'',
+		disabled:false,
 	},
 	created:function(){    
 
@@ -96,13 +97,19 @@ var app = new Vue({
           if (timePart > 15) {
                
                this.checkText = "距开会时间还有"+timePart+"分钟，开会前15分钟内才能打卡";
+                           	this.checkString = "目前状态无法打卡";
+
+               this.disabled = true;
           }
 
-            if (timePart2 >=15) {
+          if (timePart2 >=15) {
             	this.checkText = "会议已结束15分钟以上，无法打卡!"
+            	this.checkString = "目前状态无法打卡";
+            	this.disabled = true;
+
             	return;
-            }          
- 
+          }
+
 
        //    if (timePart <=5) {
           this.checkText = "请输入打卡验证码:"+ this.rand_num;
@@ -125,8 +132,11 @@ sure:function(){
            		},
            	})
 
+             
+                
+
             let formData = new FormData();
-            formData.append('rand_num', this.rand_num);
+            formData.append('rand_num', this.checkString);
 
             instances.put('http://120.24.211.212:7777/v1/attend/'+this.meetId,formData)
             	  .then(function (response) {
