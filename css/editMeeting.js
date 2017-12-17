@@ -1,7 +1,7 @@
 var app = new Vue({
 	el:".span9",
 	data: {
-		api_url:'http://120.24.211.212:7777/v1/article',
+		api_url:'http://fayuan.iwesalts.com/v1/article',
 		id:'',
 		articleId:'',
 		token:'',

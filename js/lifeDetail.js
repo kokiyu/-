@@ -9,7 +9,7 @@ var app = new Vue({
         dept_ids:'',
         id:'',
         token:'',
-        api_url:'http://120.24.211.212:7777/v1/meeting',
+        api_url:'http://fayuan.iwesalts.com/v1/meeting',
         alldata:'',
         cardData:[],
         meetId:'',
@@ -43,7 +43,7 @@ var app = new Vue({
 
             this.meetId = theRequest.meetId;
             var instance = axios.create({
-                timeout: 1000,
+                timeout: 5000,
                 async:true,
                 crossDomain:true,
                 headers: {
@@ -51,7 +51,7 @@ var app = new Vue({
                     'token':that.token,
                 },
             });
-            instance.get('http://120.24.211.212:7777/v1/attend/'+theRequest.meetId)
+            instance.get('http://fayuan.iwesalts.com/v1/attend/'+theRequest.meetId)
             .then(function (response) {
                 console.log("打卡情况:"+JSON.stringify(response));
                 that.cardData = response.data.data.data;
@@ -77,7 +77,7 @@ var app = new Vue({
             }
 
             var instance = axios.create({
-                timeout: 1000,
+                timeout: 5000,
                 async:true,
                 crossDomain:true,
                 headers: {
@@ -86,7 +86,7 @@ var app = new Vue({
                 },
             });
 
-            instance.post('http://120.24.211.212:7777/v1/attend',{
+            instance.post('http://fayuan.iwesalts.com/v1/attend',{
                 meeting_id:that.meetId,
                 users:that.users,
             })
@@ -131,7 +131,7 @@ var app = new Vue({
 
             this.meetId = theRequest.meetId;
             axios.create({
-                timeout: 1000,
+                timeout: 5000,
                 async:true,
                 crossDomain:true,
                 headers: {
@@ -167,7 +167,7 @@ var app = new Vue({
         saveData:function(){
             let that = this;
             var instance = axios.create({
-                timeout: 1000,
+                timeout: 5000,
                 async:true,
                 crossDomain:true,
                 headers: {
@@ -204,7 +204,7 @@ var app = new Vue({
             console.log(that.id);
             console.log(that.token);
             var instance = axios.create({
-                timeout: 1000,
+                timeout: 5000,
                 async:true,
                 crossDomain:true,
                 headers: {
@@ -233,7 +233,7 @@ var app = new Vue({
             let files = new FormData();
             files.append('file',file,file.name);
             var instance = axios.create({
-                timeout: 1000,
+                timeout: 5000,
                 async:true,
                 crossDomain:true,
                 headers: {
@@ -241,7 +241,7 @@ var app = new Vue({
                     'token':that.token,
                 },
             });
-            axios.post('http://120.24.211.212:7777/v1/utils/file',files)
+            axios.post('http://fayuan.iwesalts.com/v1/utils/file',files)
             .then(function(response){
                 console.log(JSON.stringify(response));
                 alert(response.data.message);

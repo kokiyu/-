@@ -11,7 +11,7 @@ var app = new Vue({
 		secretCode:'',
 		isShow:'password',
 		selected:'',
-		apiUrl: 'http://120.24.211.212:7777/v1/users/signup',
+		apiUrl: 'http://fayuan.iwesalts.com/v1/users/signup',
 		duanURL:'http://43.243.130.33:8860/sendSms',
 		message:'',
 		alldata:[],
@@ -31,7 +31,7 @@ var app = new Vue({
 		fetchData:function(){
 			var that =this;
 			//请求数据
-			axios.get('http://120.24.211.212:7777/v1/dept')
+			axios.get('http://fayuan.iwesalts.com/v1/dept')
 			.then(function (response) {
 				//部门返回的数据
 				result = JSON.stringify(response);
@@ -55,7 +55,7 @@ var app = new Vue({
 					phone:that.phone,
 				}
 			});
-			instance.get('http://120.24.211.212:7777/v1/users/requestcode')
+			instance.get('http://fayuan.iwesalts.com/v1/users/requestcode')
 			.then(function (response) {
 				console.log(JSON.stringify(response));
 				that.waitIdentify();
@@ -64,6 +64,8 @@ var app = new Vue({
 					alert(response.data.message);
 					return;
 				}
+				alert("验证码发送成功！");
+				
 				console.log(JSON.stringify(response));
 			})
 			.catch(function (error) {

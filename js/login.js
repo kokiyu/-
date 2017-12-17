@@ -3,7 +3,7 @@ var app = new Vue({
 	data:{
 		account	:'',
 		password:'',
-		api:"http://120.24.211.212:7777/v1/users/signin",
+		api:"http://fayuan.iwesalts.com/v1/users/signin",
 		user_id:'',
 	},
 	methods:{

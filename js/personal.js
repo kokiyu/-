@@ -2,8 +2,8 @@ var app = new Vue({
 	el:"#all",
 	data:{
 		alldata:[],
-		api_url:"http://120.24.211.212:7777/v1/account/",
-		upload_api:"http://120.24.211.212:7777/v1/utils/file",
+		api_url:"http://fayuan.iwesalts.com/v1/account/",
+		upload_api:"http://fayuan.iwesalts.com/v1/utils/file",
 		name:'',
 		nickname:'',
 		sex:'',
@@ -46,7 +46,7 @@ var app = new Vue({
 
 			
 			var instance = axios.create({
-				timeout: 1000,
+				timeout: 5000,
 				async:true,
 				crossDomain:true,
 				headers: {
@@ -85,7 +85,7 @@ var app = new Vue({
 		},
        haveDept:function(){
        	let that= this;
-            axios.get('http://120.24.211.212:7777/v1/dept')
+            axios.get('http://fayuan.iwesalts.com/v1/dept')
 			.then(function (response) {
 				//部门返回的数据
 				result = JSON.stringify(response);

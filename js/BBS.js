@@ -2,7 +2,7 @@ var app = new Vue({
 	el:'#all',
 	data:{
 		alldata:[],
-		api_url:'http://120.24.211.212:7777/v1/bbs',
+		api_url:'http://fayuan.iwesalts.com/v1/bbs',
 		addData:'',
 		gao:0,
 		loding_text:'点击加载更多',
@@ -37,7 +37,7 @@ methods:{
 		that.totalPage = [];
 
 		var instance = axios.create({
-			timeout: 1000,
+			timeout: 5000,
 			async:true,
 			crossDomain:true,
 			headers: {
@@ -83,7 +83,7 @@ methods:{
 			}
 		});
 		// that.totalPage = [];
-		 instance.get('http://120.24.211.212:7777/v1/bbs')
+		 instance.get('http://fayuan.iwesalts.com/v1/bbs')
 		 .then(function (response) {
 		 	
 			// console.log(JSON.stringify(response));

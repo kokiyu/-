@@ -7,16 +7,14 @@
   <meta  name="format-detection" content="telephone-no">
   <link rel="stylesheet" href="css/index_style.css" />
   <!-- defer属性是代表了在全局加载完毕之后，再读取js -->
-  <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
-  <script type="text/javascript" src="js/index_script.js" defer></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js" ></script>
+ 
 
   <title>市第一人民法院党建</title>
 </head>
 
 <body >
 <div id="all">
-<header class="header">
+<header class="headers">
   <div class="headerInfo" id = "haderTitle"> {{ HTitle }}</div>
   <div v-if="seen"  v-on:click="openNew" class="add" style="float: right;height: 100%;"><img src="images/add.png" style="height: 60%;padding: 2vw"></div>
 </header>
@@ -48,4 +46,7 @@
 
  </footer>
  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js" ></script>
+  <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" ></script>
+  <script type="text/javascript" src="js/index_script.js" ></script>
 </body>

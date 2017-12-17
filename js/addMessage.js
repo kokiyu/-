@@ -5,7 +5,7 @@ var app = new Vue({
         content:'',
         id:'',
         token:'',
-        api_url:'http://120.24.211.212:7777/v1/bbs',
+        api_url:'http://fayuan.iwesalts.com/v1/bbs',
         image:'images/upload.png',
 
 },//数据结尾处
@@ -29,7 +29,7 @@ methods:{
     console.log("获得的id"+that.id +"获得的token:"+that.token);
    
     var instance = axios.create({
-        timeout: 1000,
+        timeout: 5000,
         async:true,
         crossDomain:true,
         headers: {
@@ -75,7 +75,7 @@ methods:{
         //通过append向form对象添加数据
         files.append('file',file,file.name);
      var instance = axios.create({
-        timeout: 1000,
+        timeout: 5000,
         async:true,
         crossDomain:true,
         headers: {
@@ -83,7 +83,7 @@ methods:{
             'token':that.token,
         },
     });
-    axios.post('http://120.24.211.212:7777/v1/utils/file',files)
+    axios.post('http://fayuan.iwesalts.com/v1/utils/file',files)
     .then(function(response){
             console.log(JSON.stringify(response) );
             alert(response.data.message);

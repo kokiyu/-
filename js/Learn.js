@@ -1,7 +1,7 @@
 var app = new Vue({
 	el:'.line',
 	data:{
-		api_url:"http://120.24.211.212:7777/v1/category",
+		api_url:"http://fayuan.iwesalts.com/v1/category",
 		id:null,
 		token:null,
 		alldata:[],
@@ -51,7 +51,7 @@ var app = new Vue({
  		}, 
  		axiosCreate:function(headers){
  			return axios.create({
- 				timeout: 1000,
+ 				timeout: 5000,
  				async:true,
  				crossDomain:true,
  				headers: headers

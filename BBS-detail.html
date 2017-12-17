@@ -5,10 +5,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   
 	<meta  name="format-detection" content="telephone-no">
-	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script type="text/javascript" src="js/BBS-detail.js" defer></script>
-
 	<title>论坛文章</title>
 	<style type="text/css">
 	* {
@@ -108,7 +104,9 @@ font-size: 1.5em;
     <div id="SOHUCS" sid=""></div> 
 
 </div>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" ></script>
+	<script type="text/javascript" src="js/BBS-detail.js" defer></script>
 <!--PC和WAP自适应版-->
 <script type="text/javascript"> 
 	 window.onload = function(){
@@ -125,7 +123,7 @@ font-size: 1.5em;
 
 (function(){ 
 var appid = 'cytgCCCvJ'; 
-var conf = 'prod_c421ac804a7c3dedabc54c9fc18c4d00'; 
+var conf = '57cad4277ef56836ace253a0b2e6bf09'; 
 var width = window.innerWidth || document.documentElement.clientWidth; 
 if (width < 960) { 
 window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>

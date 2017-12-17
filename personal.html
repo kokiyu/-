@@ -5,67 +5,67 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
 	<link rel="stylesheet" href="css/personal.css" />
-	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" ></script>
-	<script type="text/javascript" src="js/personal.js" defer></script>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <title>市第一人民法院党建</title>
+	<title>市第一人民法院党建</title>
 
 </head>
 <body>
 	<div id="all">
-	<header class="header">
-		<div class="returnImg"><a href="index.html"><img src="images/return.png"></a></div>
-		<div class="headerInfo" id = "haderTitle">编辑档案</div>
-		<div class="rightBUT" v-on:click="saveData">保存</div>
-	</header>
+		<header class="header">
+			<div class="returnImg"><a href="index.html"><img src="images/return.png"></a></div>
+			<div class="headerInfo" id = "haderTitle">编辑档案</div>
+			<div class="rightBUT" v-on:click="saveData">保存</div>
+		</header>
 
-	<div id="bodyCenter">
-		<input @change="uploadImag($event)" type="file" id="upload_file"  style="display: none"/>
-		<div class="camera" v-on:click="onIconClick"><img :src="user_icon" ></div>
+		<div id="bodyCenter">
+			<input @change="uploadImag($event)" type="file" id="upload_file"  style="display: none"/>
+			<div class="camera" v-on:click="onIconClick"><img :src="user_icon" ></div>
 
-		<div class="name">
-			<p>昵称：</p>
-			<input v-model="nickname" class="enabled text-info"   />
+			<div class="name">
+				<p>昵称：</p>
+				<input v-model="nickname" class="enabled text-info"   />
+			</div>
+
+
+			<div class="name">
+				<p>部门选择：</p>
+				<select class="selected" v-model="selected"> 
+					<option disabled value="">目前办公室:{{now_dept_name}}</option>
+					<option   v-for="(item, index) in ddata" v-bind:value="item.id">{{item.dept_name}}</option> 
+					
+				</select> 
+			</div>
+
+			<div class="name">
+				<p>电话：</p>
+				<input v-model="phone" class="enabled text-info"  >
+			</div>
+
+			<div class="name">
+				<p>性别：</p>
+				<input v-model="sex" class="enabled text-info"  >
+			</div>
+
+
+			<div class="name">
+				<p>出生年份：</p>
+				<input v-model="birthday" class="enabled text-info" >
+			</div>
+
+
+			<div class="name">
+				<p>学历：</p>
+				<input v-model="education" class="enabled text-info"  >
+			</div>
+
+
+			<div class="name">
+				<p>入职时间：</p>
+				<input v-model="hiredate" class="enabled text-info">
+			</div>
 		</div>
-
-
-	<div class="name">
-		<p>部门选择：</p>
-		<select class="selected" v-model="selected"> 
-			<option disabled value="">目前办公室:{{now_dept_name}}</option>
-			<option   v-for="(item, index) in ddata" v-bind:value="item.id">{{item.dept_name}}</option> 
-		
-		</select> 
 	</div>
-
-	<div class="name">
-		<p>电话：</p>
-		<input v-model="phone" class="enabled text-info"  >
-	</div>
-
-<div class="name">
-	<p>性别：</p>
-	<input v-model="sex" class="enabled text-info"  >
-</div>
-
-
-<div class="name">
-	<p>出生年份：</p>
-	<input v-model="birthday" class="enabled text-info" >
-</div>
-
-
-<div class="name">
-	<p>学历：</p>
-	<input v-model="education" class="enabled text-info"  >
-</div>
-
-
-<div class="name">
-	<p>入职时间：</p>
-	<input v-model="hiredate" class="enabled text-info">
-</div>
-</div>
-</div>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" ></script>
+	<script type="text/javascript" src="js/personal.js" ></script>
 </body>
 </html>

@@ -8,14 +8,9 @@
 		<meta http-equiv ='Access-Control-Allow-Origin' content='*'>
 
 		<link rel="stylesheet" href="css/register-css.css" defer/>
-		<!-- defer属性是代表了在全局加载完毕之后，再读取js -->
-        <script type="js/sms.js"></script>
-		<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-		<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
-		<script type="text/javascript" src="js/register.js" defer></script>
+	
+    
   <title>市第一人民法院党建</title>
-
 	</head>
 	<body>
 		<header class="header">
@@ -26,7 +21,7 @@
 		<div class="table" id = "Table">
 <!-- 			<input type="text"  class="enabled text-info" placeholder="姓名" />
 -->			
-<input v-model="name" class="enabled text-info"  placeholder="用户名(由英文名和数字组成)" >
+<input v-model="name" class="enabled text-info"  placeholder="用户名" >
 <input v-model="phone"  class="enabled text-info" placeholder="手机号码" />
 
 <select  v-model="selected" class="selected"> 
@@ -48,5 +43,10 @@
 <div class="confirm" v-on:click="confirm">确认</div>
 </div>
 
+    <script type="js/sms.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
+		<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript" src="js/register.js"></script>
 </body>
 </html>

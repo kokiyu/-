@@ -12,6 +12,9 @@ var app = new Vue({
 		card:'',
 	},
 	created:function(){
+		if (this.alldata.length != 0) {
+			return;
+		}
 		this.fetchData();
 	},
 	methods:{
@@ -36,7 +39,7 @@ var app = new Vue({
 		console.log("获得的id"+that.id +"获得的token:"+that.token);
 
 		var instance = axios.create({
-			timeout: 1000,
+			timeout: 5000,
 			async:true,
 			crossDomain:true,
 			headers: {
@@ -48,7 +51,7 @@ var app = new Vue({
 			}
 		});
 		// that.totalPage = [];
-		instance.get('http://120.24.211.212:7777/v1/meeting')
+		instance.get('http://fayuan.iwesalts.com/v1/meeting')
 		.then(function (response) {
 			
 			that.alldata = response.data.data.data;
@@ -86,7 +89,7 @@ var app = new Vue({
 			}
 		});
 		// that.totalPage = [];
-		 instance.get('http://120.24.211.212:7777/v1/meeting')
+		 instance.get('http://fayuan.iwesalts.com/v1/meeting')
 		 .then(function (response) {
 		 	
 			// console.log(JSON.stringify(response));

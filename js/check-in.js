@@ -8,7 +8,7 @@ var app = new Vue({
 		checkString:'',
 		alldata:'',
 		meetId:'',
-		api_url:'http://120.24.211.212:7777/v1/meeting',
+		api_url:'http://fayuan.iwesalts.com/v1/meeting',
 		rand_num:'',
 		disabled:false,
 	},
@@ -56,7 +56,7 @@ var app = new Vue({
 			this.meetId = theRequest.meetId;
 
 			axios.create({
-				timeout: 1000,
+				timeout: 5000,
 				async:true,
 				crossDomain:true,
 				headers: {
@@ -138,7 +138,7 @@ sure:function(){
             let formData = new FormData();
             formData.append('rand_num', this.checkString);
 
-            instances.put('http://120.24.211.212:7777/v1/attend/'+this.meetId,formData)
+            instances.put('http://fayuan.iwesalts.com/v1/attend/'+this.meetId,formData)
             	  .then(function (response) {
                       
                       if (response.data.code != 200) {

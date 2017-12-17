@@ -2,7 +2,7 @@ var app = new Vue({
 	el:'#content',
 	data:{
 		alldata:[],
-		api_url:'http://120.24.211.212:7777/v1/bbs',
+		api_url:'http://fayuan.iwesalts.com/v1/bbs',
 		addData:'',
 		id:'',
 		token:'',
@@ -46,7 +46,7 @@ methods:{
 
 
 		var instance = axios.create({
-			timeout: 1000,
+			timeout: 5000,
 			async:true,
 			crossDomain:true,
 			headers: {
